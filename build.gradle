@@ -1,0 +1,40 @@
+// Config specifically for build
+
+buildscript {
+
+    ext {
+        springBootVersion = "2.0.6.RELEASE"
+        hibernateVersion = "6.0.13.Final"
+        springWebVersion = "5.0.10.RELEASE"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+// Below this includes project dependencies
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.hibernate.validator:hibernate-validator:$hibernateVersion")
+    compile("org.springframework:spring-web:$springWebVersion")
+    compile("org.springframework:spring-webmvc:$springWebVersion")
+    compile("org.springframework.boot:spring-boot-starter:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-json:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion")
+
+}
