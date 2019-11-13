@@ -6,6 +6,7 @@ buildscript {
         springBootVersion = "2.0.6.RELEASE"
         hibernateVersion = "6.0.13.Final"
         springWebVersion = "5.0.10.RELEASE"
+        mockitoVersion = "2.23.4"
     }
 
     repositories {
@@ -37,7 +38,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-json:$springBootVersion")
     compile("org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion")
     testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
-    testCompile("org.mockito:mockito-core:2.23.4")
+    testCompile("org.mockito:mockito-core:$mockitoVersion")
 
 }
 

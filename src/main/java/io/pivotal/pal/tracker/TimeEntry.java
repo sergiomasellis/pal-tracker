@@ -3,6 +3,7 @@ package io.pivotal.pal.tracker;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Repository
 public class TimeEntry {
@@ -73,6 +74,17 @@ public class TimeEntry {
     }
 
     @Override
+    public String toString() {
+        return "TimeEntry{" +
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -82,7 +94,12 @@ public class TimeEntry {
         }
 
         TimeEntry entry = (TimeEntry) obj;
-        return id == entry.id && (projectId == entry.projectId);
+        return id == entry.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id);
     }
 
 }
