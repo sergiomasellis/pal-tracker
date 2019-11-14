@@ -7,8 +7,13 @@ import java.util.Objects;
 
 @Repository
 public class TimeEntry {
+
     private long id;
     private long projectId;
+    private long userId;
+    private LocalDate date;
+    private int hours;
+
 
     public TimeEntry() {
 
@@ -54,9 +59,7 @@ public class TimeEntry {
         this.hours = hours;
     }
 
-    private long userId;
-    private LocalDate date;
-    private int hours;
+
 
     public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.projectId = projectId;
